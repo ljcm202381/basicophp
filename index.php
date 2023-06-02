@@ -15,6 +15,7 @@
  $impares = 0;
  $minimo = 7;
  $maximo = 0;
+ $conteo=0;
 
  if($Num == 1)
  {
@@ -28,15 +29,19 @@ for($i=0;$i < $Num; $i++)
 	$dado = rand(1,6);
 	echo "<img src=\"img/$dado.svg\" width=\"120\" height=\"120\">\n";
     if ($dado % 2) {
-        $impares += 1;
+        $impares++;
     } else {
-        $pares += 1;
+        $pares++;
     }
      if ($dado > $maximo) {
         $maximo = $dado;
     }
     if ($dado < $minimo) {
         $minimo = $dado;
+    }
+    if($dado == 5)
+    {
+      $conteo++;
     }
 	$Total += $dado;
 
@@ -56,6 +61,7 @@ if ($impares == 1) {
 }
 echo "El valor más pequeño obtenido es <strong>$minimo</strong>.</p>\n";
 echo "El valor más grande obtenido es <strong>$maximo</strong>.</p>\n";
+echo "La cantidad de cincos son: <strong>$conteo</strong>.</p>\n";
 
 
 
